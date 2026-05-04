@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visualizador de PDF - Pantalla Completa</title>
+    <style>
+        /* Elimina márgenes por defecto del navegador */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Fuerza a que el html y el body ocupen todo el alto */
+        html, body {
+            height: 100%;
+            width: 100%;
+            overflow: hidden; /* Evita que aparezca una doble barra de desplazamiento */
+        }
+
+        /* Contenedor que ocupa toda la pantalla visible */
+        .pdf-fullscreen {
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+        }
+
+        /* Estilo para que el iframe sea invisible y fluido */
+        iframe {
+            border: none;
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="pdf-fullscreen">
+        <!-- 
+            Parámetros utilizados en el src:
+            #view=FitH  -> Ajusta el PDF al ancho de la pantalla (soluciona lo que se ve en tu imagen).
+            &navpanes=0 -> Oculta el panel lateral de miniaturas que tienes abierto.
+            &toolbar=1  -> Mantiene la barra de herramientas superior para descargar/imprimir.
+        -->
+        <iframe src="cv_espaniol.pdf#view=FitH&navpanes=0">
+            <p>Tu navegador no soporta visualización de PDFs. 
+               <a href="cv_espaniol.pdf">Descarga el archivo aquí.</a>
+            </p>
+        </iframe>
+    </div>
+
+</body>
+</html>
